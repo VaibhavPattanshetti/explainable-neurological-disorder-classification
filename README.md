@@ -133,7 +133,11 @@ Weighted Avg F1-Score | **0.92**
 
 ## 📈 Confusion Matrix
 
-![Confusion Matrix](results/confusion_matrix.png)
+<p align="center">
+  <img src="results/confusion_matrix.png" width="600"/>
+  <br>
+  <em>Figure: Confusion Matrix for 8-class MRI classification</em>
+</p>
 
 ---
 
