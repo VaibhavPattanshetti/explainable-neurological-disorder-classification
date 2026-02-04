@@ -13,6 +13,17 @@ The model leverages **ResNet50 pretrained on ImageNet**, combined with **advance
 
 ---
 
+## 🛠 Tech Stack
+- Python
+- TensorFlow / Keras
+- NumPy, Pandas
+- Matplotlib, Seaborn
+- Scikit-learn
+- OpenCV
+- Google Colab
+
+---
+
 ## 🧠 Problem Statement
 
 Neurological disorders such as **brain tumors, Alzheimer’s disease, and multiple sclerosis** require accurate and early diagnosis.
@@ -141,8 +152,10 @@ Weighted Avg F1-Score | **0.92**
 
 ---
 
-## 🧪 Inference Example
+## 🔮 Future Work
+- External validation on independent MRI datasets
+- Explainable AI (Grad-CAM) for clinical interpretability
+- Binary abnormal-vs-normal pre-screening model
+- Deployment as a clinical decision support tool
 
-```text
-Predicted Class: Normal
-Confidence Score: 0.59
+---
