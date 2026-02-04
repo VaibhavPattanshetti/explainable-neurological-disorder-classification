@@ -133,7 +133,7 @@ Weighted Avg F1-Score | **0.92**
 
 ## 📈 Confusion Matrix
 
-![Confusion Matrix](images/confusion_matrix.png)
+![Confusion Matrix](results/confusion_matrix.png)
 
 ---
 
