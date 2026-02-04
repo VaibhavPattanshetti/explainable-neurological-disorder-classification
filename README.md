@@ -131,14 +131,9 @@ Weighted Avg F1-Score | **0.92**
 
 ---
 
-## 📈 Visual Outputs
+## 📈 Confusion Matrix
 
-Available in the project:
-- Class distribution plots
-- Sample MRI visualizations
-- Training vs Validation curves
-- Confusion Matrix heatmap
-- Prediction confidence output
+![Confusion Matrix](images/confusion_matrix.png)
 
 ---
 
