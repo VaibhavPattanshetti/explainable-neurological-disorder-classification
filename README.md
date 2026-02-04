@@ -1,105 +1,149 @@
-# explainable-neurological-disorder-classification
-Multi-class deep learning system for MRI-based neurological disorder classification with a focus on explainable AI (XAI) to improve model transparency and clinical trust.
+# 🧠 Multi-Class Neurological Disorder Detection from Brain MRI using Deep Learning
 
-Problem:
-Accurate diagnosis of neurological disorders from MRI scans is critical, yet challenging due to class imbalance and subtle visual differences between diseases.
+An end-to-end **deep learning–based medical imaging system** to classify **multiple neurological disorders and normal brain MRI scans** using **ResNet50 transfer learning**, with strong emphasis on **high recall and AUC**, critical for clinical safety.
 
-This project presents a multi-class deep learning model that classifies 8 neurological conditions using MRI images with high clinical relevance.
+---
 
-🔹 Disorders Classified
+## 📌 Project Overview
 
-Glioma Brain Tumor
+This project builds a **multi-class MRI classification pipeline** capable of detecting **8 neurological brain conditions** from MRI scans.  
+It is designed to assist **early diagnosis and clinical decision support** by minimizing false negatives in disease detection.
 
-Meningioma Brain Tumor
+The model leverages **ResNet50 pretrained on ImageNet**, combined with **advanced preprocessing, class imbalance handling, focal loss, and fine-tuning** to achieve high performance.
 
-Pituitary Brain Tumor
+---
 
-Alzheimer’s Dementia (Very Mild, Mild, Moderate)
+## 🧠 Problem Statement
 
-Multiple Sclerosis
+Neurological disorders such as **brain tumors, Alzheimer’s disease, and multiple sclerosis** require accurate and early diagnosis.
 
-Normal Brain
+However:
+- Manual MRI analysis is **time-consuming**
+- Diagnosis depends heavily on **expert availability**
+- Class imbalance often leads to **missed disease cases**
 
-🔹 Dataset
+This project applies **deep learning and transfer learning** to automatically classify MRI scans with **high recall**, reducing the risk of undetected disorders.
 
-Source: Kaggle – Three Brain Neurological Classes MRI Scans
+---
 
-Total Classes: 8
+## 🗂 Dataset
 
-Highly imbalanced dataset handled using:
+**Source:** Kaggle – *Three Brain Neurological Classes MRI Scans* (Extended)
 
-Class weights
+### Classes Used (8):
+- 1st Brain Tumor – Glioma  
+- 2nd Brain Tumor – Meningioma  
+- 3rd Brain Tumor – Pituitary  
+- Alzheimer’s Dementia – Very Mild  
+- Alzheimer’s Dementia – Mild  
+- Alzheimer’s Dementia – Moderate  
+- Multiple Sclerosis  
+- Normal Brain  
 
-Categorical focal loss
+### Dataset Highlights:
+- ~24,000+ MRI images
+- Highly **imbalanced medical dataset**
+- RGB consistency enforced across all images
 
-🔹 Model Architecture
+### Preprocessing:
+- Removal of corrupted / invalid files  
+- Image mode normalization (RGB conversion)  
+- Resize to **224 × 224**  
+- TensorFlow data pipelines (`tf.data`)  
+- On-the-fly data augmentation  
 
-Base Model: ResNet50 (ImageNet pre-trained)
+---
 
-Strategy:
+## ⚙️ Methodology
 
-Transfer Learning
+### 1️⃣ Exploratory Data Analysis (EDA)
+- Class distribution analysis
+- Visual inspection of MRI samples
+- Channel consistency verification (RGB / grayscale)
 
-Two-stage training:
+### 2️⃣ Data Pipeline
+- Stratified train–validation split
+- TensorFlow `Dataset` API for performance
+- Augmentation:
+  - Horizontal flip
+  - Rotation
+  - Zoom
+  - Contrast adjustment
 
-Frozen backbone
+### 3️⃣ Model Architecture
+- **ResNet50 (ImageNet pretrained)**
+- Global Average Pooling
+- Dense (512) + Dropout (0.5)
+- Softmax output for multi-class classification
 
-Fine-tuning last 35 layers
+### 4️⃣ Training Strategy
+**Phase 1 – Feature Extraction**
+- ResNet base frozen
+- Class weights applied
+- Categorical Focal Loss
 
-Input size: 224 × 224 × 3
+**Phase 2 – Fine-Tuning**
+- Last 35 layers unfrozen
+- Lower learning rate
+- Performance-based callbacks
 
-🔹 Techniques Used (THIS IMPRESSES RECRUITERS)
+---
 
-Custom Categorical Focal Loss for class imbalance
+## 🧮 Loss Function & Optimization
 
-Data Augmentation (rotation, zoom, contrast, flip)
+- **Categorical Focal Loss**
+  - Handles class imbalance
+  - Focuses learning on hard-to-classify samples
+- Optimizer: **Adam**
+- Learning rate scheduling via `ReduceLROnPlateau`
 
-Class weighting
+---
 
-Early stopping & learning rate scheduling
+## 📊 Evaluation Metrics
 
-AUC-based model checkpointing
+Medical models cannot rely on accuracy alone.
 
-🔹 Performance (Validation)
-Metric	Value
-Accuracy	91.99%
-AUC (macro)	0.9952
+Metrics used:
+- **Accuracy**
+- **AUC (Multi-label ROC AUC)**
+- **Precision / Recall / F1-Score**
+- **Confusion Matrix**
 
-Why AUC matters:
-In medical diagnosis, recall and AUC are more critical than raw accuracy to reduce false negatives.
+👉 **Recall was prioritized** to reduce false negatives (missed disease cases).
 
-🔹 Class-wise Performance (Highlight This)
+---
 
-Glioma Recall: 0.97
+## 🏆 Final Results
 
-Pituitary Tumor Recall: 1.00
+### 🔹 Overall Performance
+| Metric | Value |
+|------|------|
+Validation Accuracy | **91.99%**
+Validation AUC | **0.9952**
+Macro Avg Recall | **0.93**
+Weighted Avg F1-Score | **0.92**
 
-Multiple Sclerosis Recall: 0.95
+### 🔹 Class-Wise Highlights
+- Brain Tumor classes: **Recall up to 1.00**
+- Alzheimer’s Moderate: **Recall 0.98**
+- Multiple Sclerosis: **Recall 0.95**
+- Normal class recall kept slightly lower intentionally (clinical safety trade-off)
 
-Normal Recall: 0.88
+---
 
-High recall for disease classes ensures fewer missed diagnoses.
+## 📈 Visual Outputs
 
-🔹 Confusion Matrix
+Available in the project:
+- Class distribution plots
+- Sample MRI visualizations
+- Training vs Validation curves
+- Confusion Matrix heatmap
+- Prediction confidence output
 
-(Insert saved confusion matrix image here)
+---
 
-🔹 Inference Example
-label, confidence = predict_image(model, image_path)
-print(label, confidence)
+## 🧪 Inference Example
 
-
-Output:
-
-Predicted: Normal
-Confidence: 0.59
-
-🔹 Tech Stack
-
-Python
-
-TensorFlow / Keras
-
-NumPy, OpenCV, Matplotlib
-
-Scikit-learn
+```text
+Predicted Class: Normal
+Confidence Score: 0.59
