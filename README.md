@@ -155,7 +155,6 @@ Weighted Avg F1-Score | **0.92**
 ## 🔮 Future Work
 - External validation on independent MRI datasets
 - Explainable AI (Grad-CAM) for clinical interpretability
-- Binary abnormal-vs-normal pre-screening model
 - Deployment as a clinical decision support tool
 
 ---
