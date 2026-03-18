@@ -1,8 +1,8 @@
-streamlit==1.35.0
-tensorflow==2.16.1
-numpy>=1.24.0
-Pillow>=10.0.0
-matplotlib>=3.7.0
-scikit-image>=0.21.0
-lime>=0.2.0.1
-h5py>=3.10.0
+streamlit
+tensorflow-cpu==2.17.1
+numpy
+Pillow
+matplotlib
+scikit-learn
+lime
+scikit-image
