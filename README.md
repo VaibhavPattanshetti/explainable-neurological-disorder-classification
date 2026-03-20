@@ -1,5 +1,4 @@
-# 🧠 NeuroScan AI — Explainable AI for Multiple Neurological Disorder
-Identification
+# 🧠 NeuroScan AI — Explainable AI for Multiple Neurological Disorder Identification
 
 A **deep learning-based web application** that classifies **8 neurological disorders** from brain MRI scans using **ResNet50 Transfer Learning**, with full **Explainable AI (XAI)** support via **Grad-CAM** and **LIME** to make predictions transparent and clinically trustworthy.
 
