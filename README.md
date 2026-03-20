@@ -151,7 +151,7 @@ pip install -r requirements.txt
 
 **3. Download the model**
 
-👉 [Download from Hugging Face](https://huggingface.co/VaibhavPattanshetti/neuroscan-resnet50/resolve/main/resenet_50_new_dataset_92_v2.keras)
+👉 [Download from Hugging Face](https://huggingface.co/Vaibhav182005/neuroscan-resnet50/blob/main/resenet_50_new_dataset_92_v2.keras)
 
 Place `resenet_50_new_dataset_92_v2.keras` in the same folder as `app.py`.
 
@@ -218,15 +218,3 @@ scikit-image>=0.21.0
 > Always consult a qualified medical professional for diagnosis and treatment.
 
 ---
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👤 Author
-
-**Vaibhav Pattanshetti**
-
-🔗 [GitHub](https://github.com/VaibhavPattanshetti)
