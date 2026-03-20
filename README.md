@@ -183,21 +183,6 @@ Model hosted separately on Hugging Face:
 
 ---
 
-## 📋 Requirements
-
-```
-streamlit==1.35.0
-tensorflow==2.15.0
-numpy>=1.24.0
-Pillow>=10.0.0
-matplotlib>=3.7.0
-scikit-learn>=1.3.0
-lime>=0.2.0.1
-scikit-image>=0.21.0
-```
-
----
-
 ## 🖥️ How to Use the App
 
 1. **Upload** a brain MRI scan (JPG or PNG)
