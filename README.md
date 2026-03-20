@@ -169,9 +169,11 @@ Go to `http://localhost:8501`
 ## 📁 Project Structure
 
 ```
+
 explainable-neurological-disorder-classification/
 ├── app.py                                  # Main Streamlit application
 ├── requirements.txt                        # Python dependencies
+├── NoteBook.ipynb                          # Training notebook
 ├── .gitignore                              # Git ignore file
 ├── .gitattributes                          # Git configuration
 ├── LICENSE                                 # MIT License
