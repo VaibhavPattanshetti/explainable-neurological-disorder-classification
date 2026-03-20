@@ -8,7 +8,7 @@ A **deep learning-based web application** that classifies **8 neurological disor
 
 The trained model is hosted on Hugging Face due to its large size (217MB).
 
-👉 [Download Model from Hugging Face](https://huggingface.co/VaibhavPattanshetti/neuroscan-resnet50/resolve/main/resenet_50_new_dataset_92_v2.keras)
+👉 [Download Model from Hugging Face](https://huggingface.co/Vaibhav182005/neuroscan-resnet50/blob/main/resenet_50_new_dataset_92_v2.keras)
 
 After downloading, place `resenet_50_new_dataset_92_v2.keras` in the same folder as `app.py` before running the app.
 
